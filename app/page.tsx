@@ -29,10 +29,10 @@ export default function HomePage() {
           <Header />
           <div className="container relative z-10 flex h-full items-center justify-between">
             <motion.div
+              className="max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                 Nga Fabrikat e Kinës deri në Biznesin Tuaj
@@ -47,9 +47,9 @@ export default function HomePage() {
             </motion.div>
             
             <motion.img 
+              className="hidden md:block h-72 lg:h-80 xl:h-96"
               src="/img/logo.png" 
               alt="QIWO Global Logistic" 
-              className="hidden md:block h-72 lg:h-80 xl:h-96"
               style={{ filter: 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))' }}
               initial={{ opacity: 0, scale: 0.8, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
