@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 16px;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle grid pattern */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-20 md:py-32;
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-brand/10 backdrop-blur shadow-lg;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold transition-all shadow-lg hover:shadow-xl active:scale-95;
+}
+
+.btn-primary {
+  @apply bg-brand hover:bg-brand-light text-white;
+}
+
+.btn-accent {
+  @apply bg-brand-red hover:bg-red-600 text-white shadow-red-500/20;
+}
+
+.btn-outline {
+  @apply border-2 border-white/30 hover:border-white hover:bg-white/10 text-white backdrop-blur;
+}
