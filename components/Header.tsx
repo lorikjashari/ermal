@@ -34,15 +34,14 @@ export default function Header() {
         </button>
       </div>
       {open && (
-        <motion.nav 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-full left-0 right-0 backdrop-blur-xl shadow-2xl border-b border-white/20"
-          style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}
-        >
-          <div className="container py-6">
-            <div className="flex flex-col gap-1">
+        <nav className="md:hidden absolute top-full left-0 right-0 backdrop-blur-xl shadow-2xl border-b border-white/20" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            exit={{ opacity: 0, y: -20 }}
+          >
+            <div className="container py-6">
+              <div className="flex flex-col gap-1">
               <Link 
                 href="#rreth" 
                 onClick={() => setOpen(false)} 
@@ -80,7 +79,8 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </motion.nav>
+          </motion.div>
+        </nav>
       )}
     </header>
   );

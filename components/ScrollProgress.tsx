@@ -5,9 +5,16 @@ export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-light via-brand-red to-brand-light z-[100] origin-left"
-      style={{ scaleX: scrollYProgress }}
-    />
+    <div className="fixed top-0 left-0 right-0 h-1 z-[100]">
+      <motion.div
+        style={{ 
+          scaleX: scrollYProgress,
+          height: '100%',
+          width: '100%',
+          transformOrigin: 'left',
+          background: 'linear-gradient(to right, #1F6FE5, #D6332E, #1F6FE5)'
+        }}
+      />
+    </div>
   );
 }

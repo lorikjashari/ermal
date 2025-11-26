@@ -48,15 +48,18 @@ export default function HomePage() {
             </div>
             
             <div className="hidden md:block">
-              <motion.img 
-                src="/img/logo.png" 
-                alt="QIWO Global Logistic" 
-                className="h-72 lg:h-80 xl:h-96"
-                style={{ filter: 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))' }}
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8, x: 50 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-              />
+              >
+                <img 
+                  src="/img/logo.png" 
+                  alt="QIWO Global Logistic" 
+                  className="h-72 lg:h-80 xl:h-96"
+                  style={{ filter: 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))' }}
+                />
+              </motion.div>
             </div>
           </div>
         </section>

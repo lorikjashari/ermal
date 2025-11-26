@@ -40,23 +40,23 @@ export default function Gallery() {
       {/* Main Gallery Display */}
       <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0 cursor-pointer"
-            onClick={toggleZoom}
-          >
-            <img
-              src={images[currentIndex]}
-              alt={`Gallery ${currentIndex + 1}`}
-              className={`w-full h-full object-cover transition-transform duration-300 ${
-                isZoomed ? "scale-150" : "scale-100"
-              }`}
-            />
-          </motion.div>
+          <div className="absolute inset-0 cursor-pointer" onClick={toggleZoom}>
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src={images[currentIndex]}
+                alt={`Gallery ${currentIndex + 1}`}
+                className={`w-full h-full object-cover transition-transform duration-300 ${
+                  isZoomed ? "scale-150" : "scale-100"
+                }`}
+              />
+            </motion.div>
+          </div>
         </AnimatePresence>
 
         {/* Navigation Arrows */}
