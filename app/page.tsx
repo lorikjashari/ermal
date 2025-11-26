@@ -28,33 +28,36 @@ export default function HomePage() {
           </motion.div>
           <Header />
           <div className="container relative z-10 flex h-full items-center justify-between">
-            <motion.div
-              className="max-w-3xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                Nga Fabrikat e Kinës deri në Biznesin Tuaj
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed">
-                Ne ofrojmë shërbime të plota biznesi për ju në Kinë. Çështjet profesionale ua lini profesionistëve — me depo logjistike 1000m² dhe komunikim të vazhdueshëm me klientët.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="#kontakt" className="btn btn-primary text-base px-8 py-3">Na Kontaktoni Tani</Link>
-                <Link href="#sherbimet" className="btn btn-outline text-white border-2 hover:bg-white hover:text-brand transition-all text-base px-8 py-3">Shihni Shërbimet</Link>
-              </div>
-            </motion.div>
+            <div className="max-w-3xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  Nga Fabrikat e Kinës deri në Biznesin Tuaj
+                </h1>
+                <p className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed">
+                  Ne ofrojmë shërbime të plota biznesi për ju në Kinë. Çështjet profesionale ua lini profesionistëve — me depo logjistike 1000m² dhe komunikim të vazhdueshëm me klientët.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                  <Link href="#kontakt" className="btn btn-primary text-base px-8 py-3">Na Kontaktoni Tani</Link>
+                  <Link href="#sherbimet" className="btn btn-outline text-white border-2 hover:bg-white hover:text-brand transition-all text-base px-8 py-3">Shihni Shërbimet</Link>
+                </div>
+              </motion.div>
+            </div>
             
-            <motion.img 
-              className="hidden md:block h-72 lg:h-80 xl:h-96"
-              src="/img/logo.png" 
-              alt="QIWO Global Logistic" 
-              style={{ filter: 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))' }}
-              initial={{ opacity: 0, scale: 0.8, x: 50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            />
+            <div className="hidden md:block">
+              <motion.img 
+                src="/img/logo.png" 
+                alt="QIWO Global Logistic" 
+                className="h-72 lg:h-80 xl:h-96"
+                style={{ filter: 'drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.6))' }}
+                initial={{ opacity: 0, scale: 0.8, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              />
+            </div>
           </div>
         </section>
       </div>
