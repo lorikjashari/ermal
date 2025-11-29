@@ -67,7 +67,7 @@ export default function HomePage() {
 
       <section className="bg-white py-8 border-b border-brand/10">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
             {[
               { icon: "✓", text: "Depo 1000m² në Kinë" },
               { icon: "✓", text: "Komunikim 24/7" },
@@ -80,9 +80,9 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 1 }}
               >
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl text-brand">{badge.icon}</span>
-                  <span className="text-sm font-semibold text-brand-dark">{badge.text}</span>
+                <div className="flex items-center justify-center gap-2 px-2">
+                  <span className="text-xl md:text-2xl text-brand flex-shrink-0">{badge.icon}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-brand-dark">{badge.text}</span>
                 </div>
               </motion.div>
             ))}
@@ -140,8 +140,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { name: "Besim Sallahu", role: "Owner & Founder", phone: "+383 44 118 665", img: "/img/besimsallahu.jpg" },
-              { name: "Ermal Sallahu", role: "CEO Kosovo", phone: "+383 48 118 665", img: "/img/ermalsallahu.jpg" },
-              { name: "David", role: "CEO China", phone: "+86 132 5579 0890", img: "/img/david.jpg" },
+              { name: "Ermal Sallahu", role: "CEO", phone: "+383 48 118 665", img: "/img/ermalsallahu.jpg" },
+              { name: "David", role: "Senior Vice President (SVP)", phone: "+86 132 5579 0890", img: "/img/david.jpg" },
             ].map((member) => (
               <motion.div key={member.name} whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl">
@@ -264,19 +264,35 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="blog" eyebrow="Blog" title="Artikujt e fundit" desc="Lexoni udhëzues dhe këshilla për importin nga Kina." className="bg-white text-brand-dark">
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <Section id="blog" eyebrow="Blog" title="Videot e Fundit" desc="Shikoni momente nga puna jonë dhe shërbimet që ofrojmë." className="bg-white text-brand-dark">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { href: "/blog/si-te-importosh-nga-kina-udhezues-2025", t: "Si të importosh nga Kina – Udhëzues 2025", d: "Hapat praktikë për të nisur me siguri.", date: "2025-01-10" },
-            { href: "/blog/transporti-detar-vs-ajror", t: "Transporti Detar vs Ajror", d: "Zgjidhja sipas kohës dhe buxhetit.", date: "2025-02-15" },
-            { href: "/blog/si-funksionon-viza-e-biznesit-per-kine", t: "Viza e Biznesit për Kinë", d: "Procesi, dokumentet dhe garancia.", date: "2025-03-20" },
-          ].map((b) => (
-            <motion.div key={b.href} whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-              <a href={b.href} className="block rounded-2xl border border-brand/10 bg-gradient-to-br from-white to-blue-50/30 p-6 shadow-lg hover:shadow-2xl transition-all h-full group">
-                <span className="inline-block px-3 py-1 rounded-full bg-brand-light/10 text-brand-light text-xs font-semibold mb-3">{b.date}</span>
-                <h3 className="font-bold text-lg text-brand group-hover:text-brand-light transition-colors">{b.t}</h3>
-                <p className="text-brand-dark/70 mt-3 leading-relaxed">{b.d}</p>
-              </a>
+            { src: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F645597724752134%2F&show_text=false&width=267&t=0", title: "Video 1" },
+            { src: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61559773318042%2Fvideos%2F9823749231020035%2F&show_text=false&width=267&t=0", title: "Video 2" },
+            { src: "https://www.facebook.com/plugins/video.php?height=494&href=https%3A%2F%2Fwww.facebook.com%2F61559773318042%2Fvideos%2F1276567577113049%2F&show_text=false&width=560&t=0", title: "Video 3" },
+            { src: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61559773318042%2Fvideos%2F1125898732111359%2F&show_text=false&width=267&t=0", title: "Video 4" },
+          ].map((video, idx) => (
+            <motion.div 
+              key={idx} 
+              whileHover={{ y: -6 }} 
+              transition={{ duration: 0.3 }}
+            >
+              <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all bg-gradient-to-br from-white to-blue-50/30 border border-brand/10">
+                <div className="aspect-[9/16] relative">
+                  <iframe 
+                    src={video.src}
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 'none' }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-sm text-brand-dark/60">Nga puna jonë</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
