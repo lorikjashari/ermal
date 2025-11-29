@@ -21,13 +21,13 @@ export default function HomePage() {
     <div>
       <ScrollProgress />
       <div ref={ref as any}>
-        <section className="relative h-[70vh] md:h-[80vh]">
+        <section className="relative h-[85vh] md:h-[80vh] min-h-[600px]">
           <video className="absolute inset-0 h-full w-full object-cover" src="/img/background.mp4" autoPlay muted loop playsInline />
           <motion.div style={{ opacity: overlayOpacity }}>
             <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/70 to-brand-dark" />
           </motion.div>
           <Header />
-          <div className="container relative z-10 flex h-full items-center justify-between">
+          <div className="container relative z-10 flex h-full items-center justify-between pb-8 md:pb-0">
             <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
