@@ -141,7 +141,7 @@ export default function HomePage() {
             {[
               { name: "Besim Sallahu", role: "Owner & Founder", phone: "+383 44 118 665", img: "/img/besimsallahu.jpg" },
               { name: "Ermal Sallahu", role: "CEO Kosovo", phone: "+383 48 118 665", img: "/img/ermalsallahu.jpg" },
-              { name: "David", role: "CEO China", phone: "", img: "/img/david.jpg" },
+              { name: "David", role: "CEO China", phone: "+86 132 5579 0890", img: "/img/david.jpg" },
             ].map((member) => (
               <motion.div key={member.name} whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl">
