@@ -137,10 +137,11 @@ export default function HomePage() {
       <Section id="rreth" eyebrow="Rreth nesh" title="Pse të Zgjedhni QIWO?" className="bg-brand-dark/20 pattern-dots">
         <div className="mt-10 mb-16">
           <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-10">Ekipi Ynë</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { name: "Besim Sallahu", role: "Owner & Founder", phone: "+383 44 118 665", img: "/img/besimsallahu.jpg" },
               { name: "Ermal Sallahu", role: "CEO Kosovo", phone: "+383 48 118 665", img: "/img/ermalsallahu.jpg" },
+              { name: "David", role: "CEO China", phone: "", img: "/img/david.jpg" },
             ].map((member) => (
               <motion.div key={member.name} whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
                 <div className="rounded-2xl overflow-hidden bg-white shadow-2xl">
@@ -148,7 +149,7 @@ export default function HomePage() {
                   <div className="p-6 text-center">
                     <h4 className="text-xl font-bold text-brand-dark">{member.name}</h4>
                     <p className="text-brand mt-1 font-semibold">{member.role}</p>
-                    <a href={`tel:${member.phone}`} className="inline-block mt-3 text-brand-light hover:text-brand transition-colors">{member.phone}</a>
+                    {member.phone && <a href={`tel:${member.phone}`} className="inline-block mt-3 text-brand-light hover:text-brand transition-colors">{member.phone}</a>}
                   </div>
                 </div>
               </motion.div>
